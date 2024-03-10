@@ -1,0 +1,923 @@
+<resources>
+    <string name="app_name">C_Lang :)</string>
+    <string name="welcome_to_c_language_quiz">Welcome to C_Language quiz :)</string>
+    <string name="todo">TODO</string>
+    <string name="t">\n\n
+
+        \t\t \t \t \t \t \t \t \tQuestions with there Answers\n\n\n\n\n\n
+            1.  What does static variable mean?\n
+Ans: Static variables are the variables which retain their values between the function calls. They
+are initialized only once their scope is within the function in which they are defined.\n\n
+2. What is a pointer?\n
+Ans: Pointers are variables which stores the address of another variable. That variable may be a
+scalar (including another pointer), or an aggregate (array or structure). The pointed-to object may
+be part of a larger object, such as a field of a structure or an element in an array.\n\n
+3. What are the uses of a pointer?\n
+Ans: Pointer is used in the following cases
+i) It is used to access array elements
+ii) It is used for dynamic memory allocation.
+iii) It is used in Call by reference
+iv) It is used in data structures like trees, graph, linked list etc.\n\n
+4. What is a structure?\n
+Ans: Structure constitutes a super data type which represents several different data types in a
+single unit. A structure can be initialized if it is static or global.\n\n
+5. What is a union?\n
+Ans: Union is a collection of heterogeneous data type but it uses efficient memory utilization
+technique by allocating enough memory to hold the largest member. Here a single area of
+memory contains values of different types at different time. A union can never be initialized.\n\n
+6. What are the differences between structures and union?\n
+Ans: A structure variable contains each of the named members, and its size is large enough to
+hold all the members. Structure elements are of same size.
+A union contains one of the named members at a given time and is large enough to hold the
+largest member. Union element can be of different sizes.\n\n
+7. What are the differences between structures and arrays?\n
+Ans: Structure is a collection of heterogeneous data type but array is a collection of
+homogeneous data types.
+Array
+1-It is a collection of data items of same data type.
+2-It has declaration only
+3-.There is no keyword.
+4- array name represent the address of the starting element.
+Structure
+1-It is a collection of data items of different data type.
+2- It has declaration and definition
+3- keyword struct is used
+4-Structure name is known as tag it is the short hand notation of the declaration.\n\n
+8. In header files whether functions are declared or defined?\n
+Ans: Functions are declared within header file. That is function prototypes exist in a header
+file,not function bodies. They are defined in library (lib).\n\n
+9. What are the differences between malloc () and calloc ()?\n
+Ans: Malloc Calloc 1-Malloc takes one argument Malloc(a);where a number of bytes 2-memory
+allocated contains garbage values
+1-Calloc takes two arguments Calloc(b,c) where b no of object and c size of object
+2-It initializes the contains of block of memory to zerosMalloc takes one argument, memory
+allocated contains garbage values.
+It allocates contiguous memory locations. Calloc takes two arguments, memory allocated
+contains all zeros, and the memory allocated is not contiguous.\n\n
+        10. What are macros? What are its advantages and disadvantages?\n
+Ans: Macros are abbreviations for lengthy and frequently used statements. When a macro is
+called the entire code is substituted by a single line though the macro definition is of several
+lines.
+The advantage of macro is that it reduces the time taken for control transfer as in case of
+function. The disadvantage of it is here the entire code is substituted so the program becomes
+lengthy if a macro is called several times.\n\n
+11. Difference between pass by reference and pass by value?\n
+Ans: Pass by reference passes a pointer to the value. This allows the callee to modify the
+variable directly.Pass by value gives a copy of the value to the callee. This allows the callee to
+modify the value without modifying the variable. (In other words, the callee simply cannot
+modify the variable, since it lacks a reference to it.)\n\n
+12. What is static identifier?\n
+Ans: A file-scope variable that is declared static is visible only to functions within that file. A
+function-scope or block-scope variable that is declared as static is visible only within that scope.
+Furthermore, static variables only have a single instance. In the case of function- or block-scope
+variables, this means that the variable is not ―automatic‖ and thus retains its value across
+function invocations.\n\n
+13. Where is the auto variables stored?\n
+Ans: Auto variables can be stored anywhere, so long as recursion works. Practically, they‘re
+stored on
+the stack. It is not necessary that always a stack exist. You could theoretically allocate function
+invocation records from the heap.\n\n
+14. Where does global, static, and local, register variables, free memory and C Program
+instructions get stored?\n
+Ans: Global: Wherever the linker puts them. Typically the ―BSS segment‖ on many platforms.
+Static: Again, wherever the linker puts them. Often, they‘re intermixed with the globals. The
+only difference between globals and statics is whether the linker will resolve the symbols across
+compilation units.Local: Typically on the stack, unless the variable gets register allocated and
+never spills.Register: Nowadays, these are equivalent to ―Local‖ variables. They live on the stack
+unless they get register-allocated.\n\n
+15. Difference between arrays and linked list?\n
+Ans: An array is a repeated pattern of variables in contiguous storage. A linked list is a set of
+structures scattered through memory, held together by pointers in each element that point to the
+next element. With an array, we can (on most architectures) move from one element to the next
+by adding a fixed constant to the integer value of the pointer. With a linked list, there is a ―next‖
+pointer in each structure which says what element comes next.
+16. What are enumerations?\n
+Ans: They are a list of named integer-valued constants. Example:enum color { black , orange=4,
+yellow, green, blue, violet };This declaration defines the symbols ―black‖, ―orange‖, ―yellow‖,
+etc. to have the values ―1,‖ ―4,‖ ―5,‖ … etc. The difference between an enumeration and a macro
+is that the enum actually declares a type, and therefore can be type checked.\n\n
+17. Describe about storage allocation and scope of global, extern, static, local and register
+variables?\n
+Ans: Globals have application-scope. They‘re available in any compilation unit that includes an
+appropriate declaration (usually brought from a header file). They‘re stored wherever the linker
+puts them, usually a place called the ―BSS segment.‖
+Extern? This is essentially ―global.‖
+Static: Stored the same place as globals, typically, but only available to the compilation unit that
+contains them. If they are block-scope global, only available within that block and its subblocks.
+Local: Stored on the stack, typically. Only available in that block and its subblocks.
+(Although pointers to locals can be passed to functions invoked from within a scope where that
+local is valid.)
+Register: See tirade above on ―local‖ vs. ―register.‖ The only difference is that
+the C compiler will not let you take the address of something you‘ve declared as ―register.‖\n\n
+18. What are register variables? What are the advantages of using register variables?\n
+Ans: If a variable is declared with a register storage class,it is known as register variable.The
+register variable is stored in the cpu register instead of main memory.Frequently used variables
+are declared as register variable as it‘s access time is faster.\n\n
+19. What is the use of typedef?\n
+Ans: The typedef help in easier modification when the programs are ported to another machine.
+A descriptive new name given to the existing data type may be easier to understand the code.\n\n
+20. Can we specify variable field width in a scanf() format string? If possible how?\n
+Ans: All field widths are variable with scanf(). You can specify a maximum field width for a
+given
+field by placing an integer value between the ‗%‘ and the field type specifier. (e.g. %64s). Such a
+specifier will still accept a narrower field width.
+The one exception is %#c (where # is an integer). This reads EXACTLY # characters, and it is
+the
+only way to specify a fixed field width with scanf().\n\n
+21. Out of fgets() and gets() which function is safe to use and why?\n
+Ans: fgets() is safer than gets(), because we can specify a maximum input length. Neither one is
+completely safe, because the compiler can‘t prove that programmer won‘t overflow the buffer he
+pass to fgets ().\n\n
+22. Difference between strdup and strcpy?\n
+Ans: Both copy a string. strcpy wants a buffer to copy into. strdup allocates a buffer using
+malloc().
+Unlike strcpy(), strdup() is not specified by ANSI .\n\n
+23. What is recursion?\n
+Ans: A recursion function is one which calls itself either directly or indirectly it must halt at a
+definite point to avoid infinite recursion.
+24. Differentiate between for loop and a while loop? What are it uses?
+Ans: For executing a set of statements fixed number of times we use for loop while when the
+number of iterations to be performed is not known in advance we use while loop.\n\n
+25. What is storage class? What are the different storage classes in C?\n
+Ans: Storage class is an attribute that changes the behavior of a variable. It controls the lifetime,
+scope and linkage. The storage classes in c are auto, register, and extern, static, typedef.\n\n
+26. What the advantages of using Unions?\n
+Ans: When the C compiler is allocating memory for unions it will always reserve enough room
+for the largest member.\n\n
+27. What is the difference between Strings and Arrays?
+Ans: String is a sequence of characters ending with NULL .it can be treated as a one dimensional
+array of characters terminated by a NULL character.\n\n
+28. What is a far pointer? Where we use it?\n
+Ans: In large data model (compact, large, huge) the address B0008000 is acceptable because in
+these
+model all pointers to data are 32bits long. If we use small data model(tiny, small, medium) the
+above address won‘t work since in these model each pointer is 16bits long. If we are working in
+a small data model and want to access the address B0008000 then we use far pointer. Far pointer
+is always treated as a 32bit pointer and contains a segment address and offset address both of
+16bits each. Thus the address is represented using segment : offset format B000h:8000h. For any
+given memory address there are many possible far address segment : offset pair. The segment
+register contains the address where the segment begins and offset register contains the offset of
+data/code from where segment begins.\n\n
+29. What is a huge pointer?\n
+Ans: Huge pointer is 32bit long containing segment address and offset address. Huge pointers
+are
+normalized pointers so for any given memory address there is only one possible huge address
+segment: offset pair. Huge pointer arithmetic is doe with calls to special subroutines so its
+arithmetic slower than any other pointers.\n\n
+30. What is a normalized pointer, how do we normalize a pointer?\n
+Ans: It is a 32bit pointer, which has as much of its value in the segment register as possible.
+Since
+a segment can start every 16bytes so the offset will have a value from 0 to F. for normalization
+convert the address into 20bit address then use the 16bit for segment address and 4bit for the
+offset address. Given a pointer 500D: 9407,we convert it to a 20bit absolute address
+549D7,Which then normalized to 549D:0007.
+31. What is near pointer?
+Ans: A near pointer is 16 bits long. It uses the current content of the CS (code segment) register
+(if
+the pointer is pointing to code) or current contents of DS (data segment) register (if the pointer is
+pointing to data) for the segment part, the offset part is stored in a 16 bit near pointer. Using near
+pointer limits the data/code to 64kb segment.\n\n
+32. In C, why is the void pointer useful? When would you use it?\n
+Ans: The void pointer is useful because it is a generic pointer that any pointer can be cast into
+and
+back again without loss of information.      \n\n
+        33. What is a NULL Pointer? Whether it is same as an uninitialized pointer?   \n
+Ans: Null pointer is a pointer which points to nothing but uninitialized pointer may point to
+anywhere.   \n\n
+34. Are pointers integer?   \n
+Ans: No, pointers are not integers. A pointer is an address. It is a positive number.   \n\n
+35. What does the error ‘Null Pointer Assignment’ means and what causes this error?   \n
+Ans: As null pointer points to nothing so accessing a uninitialized pointer or invalid location
+may cause an error.\n\n
+36. What is generic pointer in C?\n
+Ans: In C void* acts as a generic pointer. When other pointer types are assigned to generic
+pointer, conversions are applied automatically (implicit conversion).\n\n
+37. Are the expressions arr and &amp;arr same for an array of integers?\n
+Ans: Yes for array of integers they are same.\n\n
+38. IMP>How pointer variables are initialized?\n
+Ans: Pointer variables are initialized by one of the following ways.
+I. Static memory allocation
+II. Dynamic memory allocation\n\n
+39. What is static memory allocation?\n
+Ans: Compiler allocates memory space for a declared variable. By using the address of operator,
+the reserved address is obtained and this address is assigned to a pointer variable. This way of
+assigning pointer value to a pointer variable at compilation time is known as static memory
+allocation.\n\n
+40. What is dynamic memory allocation?\n
+Ans: A dynamic memory allocation uses functions such as malloc() or calloc() to get memory
+dynamically. If these functions are used to get memory dynamically and the values returned by
+these function are assigned to pointer variables, such a way of allocating memory at run time is
+known as dynamic memory allocation.\n\n
+41. What is the purpose of realloc?\n
+Ans: It increases or decreases the size of dynamically allocated array. The function realloc
+(ptr,n) uses two arguments. The first argument ptr is a pointer to a block of memory for which
+the size is to be altered. The second argument specifies the new size. The size may be increased
+or decreased. If sufficient space is not available to the old region the function may create a new
+region.\n\n
+42. What is pointer to a pointer?\n
+Ans: If a pointer variable points another pointer value. Such a situation is known as a pointer to a
+pointer.\n
+Example:
+int *p1,**p2,v=10;
+P1=&amp;v; p2= &amp;p1;\n
+        Here p2 is a pointer to a pointer.\n\n
+43. What is an array of pointers?\n
+Ans: if the elements of an array are addresses, such an array is called an array of pointers.\n\n
+44. Difference between linker and linkage?\n
+Ans: Linker converts an object code into an executable code by linking together the necessary built
+        in
+        functions. The form and place of declaration where the variable is declared in a program
+determine the linkage of variable.\n\n
+45. Is it possible to have negative index in an array?\n
+Ans: Yes it is possible to index with negative value provided there are data stored in this
+location. Even if it is illegal to refer to the elements that are out of array bounds, the compiler
+will not produce error because C has no check on the bounds of an array.\n\n
+46. Why is it necessary to give the size of an array in an array declaration?\n
+Ans: When an array is declared, the compiler allocates a base address and reserves enough space
+in
+memory for all the elements of the array. The size is required to allocate the required space and
+hence size must be mentioned.\n\n
+47. What modular programming?\n
+Ans: If a program is large, it is subdivided into a number of smaller programs that are called
+modules or subprograms. If a complex problem is solved using more modules, this approach is
+known as modular programming.\n\n
+48. What is a function?\n
+Ans: A large program is subdivided into a number of smaller programs or subprograms. Each
+subprogram
+specifies one or more actions to be performed for the larger program. Such sub programs are
+called functions.\n\n
+49. What is an argument?\n
+Ans: An argument is an entity used to pass data from the calling to a called function.\n\n
+50. What are built in functions?\n
+Ans: The functions that are predefined and supplied along with the compiler are known as
+builtin
+functions. They are also known as library functions.\n\n
+51. Difference between formal argument and actual argument?\n
+Ans: Formal arguments are the arguments available in the function definition. They are preceded
+by
+their own data type. Actual arguments are available in the function call. These arguments are
+given
+as constants or variables or expressions to pass the values to the function.\n\n
+52. Is it possible to have more than one main() function in a C program ?
+Ans: The function main() can appear only once. The program execution starts from main.\n\n
+53. What is the difference between an enumeration and a set of pre-processor # defines?\n
+Ans: There is hardly any difference between the two, except that #defines has a global effect
+(throughout the file) whereas an enumeration can have an effect local to the block if desired.
+Some advantages of enumeration are that the numeric values are automatically assigned whereas
+in #define we have to explicitly define them. A disadvantage is that we have no control over the
+size of enumeration variables.\n\n
+54. How are Structure passing and returning implemented by the complier?\n
+Ans: When structures are passed as argument to functions, the entire structure is typically
+pushed on
+the stack. To avoid this overhead many programmer often prefer to pass pointers to structure
+instead of actual structures. Structures are often returned from functions in a location pointed to
+by an extra, compiler-supported ‗hidden‘ argument to the function.\n\n
+55. IMP>what is the similarity between a Structure, Union and enumeration?\n
+Ans: All of them let the programmer to define new data type.\n\n
+56. Can a Structure contain a Pointer to itself?\n
+Ans: Yes such structures are called self-referential structures.\n\n
+57. How can we read/write Structures from/to data files?\n
+Ans: To write out a structure we can use fwrite() as Fwrite( &amp;e, sizeof(e),1,fp);Where e is a
+structure
+variable. A corresponding fread() invocation can read the structure back from file. calling
+fwrite() it writes out sizeof(e) bytes from the address &amp;e. Data files written as memory images
+with fwrite(),however ,will not be portable, particularly if they contain floating point fields or
+Pointers. This is because memory layout of structures is machine and compiler
+dependent. Therefore, structures written as memory images cannot necessarily be read back by
+programs running on other machine, and this is the important concern if the data files you‘re
+writing will ever be interchanged between machines.\n\n
+58. Write a program which employs Recursion?\n\n
+Ans: int fact(int n) { return n > 1 ? n * fact(n – 1) : 1; }\n\n
+59.Write a program which uses Command Line Arguments?\n
+Ans:
+#include\n
+void main(int argc,char *argv[])\n
+{\n
+int i;\n
+clrscr();\n
+for(i=0;i
+printf(―\n%d‖,argv[i]);
+}\n\n
+60. Difference between array and pointer?\n
+Ans:
+Array\n
+1- Array allocates space automatically\n
+2- It cannot be resized\n
+3- It cannot be reassigned\n
+4- sizeof (arrayname) gives the number of bytes occupied by the array.\n\n
+Pointer\n
+1-Explicitly assigned to point to an allocated space.\n
+2-It can be sized using realloc()\n
+3-pointer can be reassigned.\n
+4-sizeof (p) returns the number of bytes used to store the pointer variable p.\n\n
+61. What do the ‘c’ and ‘v’ in argc and argv stand for?\n
+Ans: The c in argc(argument count) stands for the number of command line argument the
+program is
+invoked with and v in argv(argument vector) is a pointer to an array of character string that
+contain the arguments.\n\n
+62. IMP>what are C tokens?\n
+Ans: There are six classes of tokens: identifier, keywords, constants, string literals, operators and
+other separators.\n\n
+63. What are C identifiers?\n
+Ans: These are names given to various programming element such as variables, function,
+arrays.It is a combination of letter, digit and underscore.It should begin with letter. Backspace is
+not allowed.\n\n
+64. Difference between syntax vs logical error?\n
+Ans:
+Syntax Error\n
+1-These involves validation of syntax of language.\n
+2-compiler prints diagnostic message.\n\n
+Logical Error\n
+1-logical error are caused by an incorrect algorithm or by a statement mistyped in such a way
+that it doesn‘t violet syntax of language.\n
+2-difficult to find.\n\n
+65. What is preincrement and post increment?\n
+Ans: ++n (pre increment) increments n before its value is used in an assignment operation or any
+expression containing it. n++ (post increment) does increment after the value of n is used.\n\n
+66. Write a program to interchange 2 variables without using the third one.\n
+Ans:\n
+a ^= b; ie a=a^b\n
+b ^= a; ie b=b^a;\n
+a ^= b ie a=a^b;\n
+here the numbers are converted into binary and then xor operation is performed.
+You know, you‘re just asking ―have you seen this overly clever trick that‘s not worth applying
+on
+modern architectures and only really applies to integer variables?‖\n\n
+67. What is the maximum combined length of command line arguments including the space
+between adjacent arguments?\n
+Ans: It depends on the operating system.\n\n
+68. What are bit fields? What is the use of bit fields in a Structure declaration?\n
+Ans: A bit field is a set of adjacent bits within a single implementation based storage unit that we
+will call a ―word‖.\n
+The syntax of field definition and access is based on structure.\n
+Struct {\n
+unsigned int k :1;\n
+unsigned int l :1;\n
+unsigned int m :1;\n
+}flags;\n
+the number following the colon represents the field width in bits.Flag is a variable that contains
+three bit fields.\n\n
+69. What is a preprocessor, what are the advantages of preprocessor?\n
+Ans: A preprocessor processes the source code program before it passes through the compiler.\n
+1- a preprocessor involves the readability of program\n
+2- It facilitates easier modification\n
+3- It helps in writing portable programs\n
+4- It enables easier debugging\n
+5- It enables testing a part of program\n
+6- It helps in developing generalized program\n\n
+70. What are the facilities provided by preprocessor?\n
+Ans:
+1-file inclusion\n
+2-substitution facility\n
+3-conditional compilation\n\n
+71. What are the two forms of #include directive?\n
+Ans:
+1.#include‖filename‖\n
+2.#include\n
+the first form is used to search the directory that contains the source file.If the search fails in the
+home directory it searches the implementation defined locations.In the second form ,the
+preprocessor searches the file only in the implementation defined locations.\n\n
+72. How would you use the functions randomize() and random()?\n
+Ans:
+Randomize() initiates random number generation with a random value.\n
+Random() generates random number between 0 and n-1;\n\n
+73. What do the functions atoi(), itoa() and gcvt() do?\n
+Ans:
+atoi() is a macro that converts integer to character.\n
+itoa() It converts an integer to string\n
+gcvt() It converts a floating point number to string\n\n
+74. How would you use the functions fseek(), freed(), fwrite() and ftell()?\n
+Ans:
+fseek(f,1,i) Move the pointer for file f a distance 1 byte from location i.\n
+fread(s,i1,i2,f) Enter i2 dataitems,each of size i1 bytes,from file f to string s.\n
+fwrite(s,i1,i2,f) send i2 data items,each of size i1 bytes from string s to file f.\n
+ftell(f) Return the current pointer position within file f.\n
+The data type returned for functions fread,fseek and fwrite is int and ftell is long int.\n\n
+75. What is the difference between the functions memmove() and memcpy()?\n
+Ans: The arguments of memmove() can overlap in memory. The arguments of memcpy()
+cannot.\n\n
+76. What is a file?\n
+Ans: A file is a region of storage in hard disks or in auxiliary storage devices.It contains bytes of
+information .It is not a data type.\n\n
+77. IMP>what are the types of file?\n
+Ans: Files are of two types\n
+1-high level files (stream oriented files) :These files are accessed using library functions\n
+2-low level files(system oriented files) :These files are accessed using system calls\n\n
+78. IMP>what is a stream?\n
+Ans: A stream is a source of data or destination of data that may be associated with a disk or
+other
+I/O device. The source stream provides data to a program and it is known as input stream. The
+destination stream eceives the output from the program and is known as output stream.\n\n
+79. What is meant by file opening?\n
+
+Ans: The action of connecting a program to a file is called opening of a file. This requires
+creating
+an I/O stream before reading or writing the data.\n\n
+80. What is FILE?\n
+Ans: FILE is a predefined data type. It is defined in stdio.h file.\n\n
+81. What is a file pointer?\n
+Ans: The pointer to a FILE data type is called as a stream pointer or a file pointer. A file pointer
+points to the block of information of the stream that had just been opened.\n\n
+82. How is fopen()used ?\n
+Ans: The function fopen() returns a file pointer. Hence a file pointer is declared and it is
+assigned
+as\n
+FILE *fp;\n
+fp= fopen(filename,mode);\n\n
+filename is a string representing the name of the file and the mode represents:
+―r‖ for read operation\n
+―w‖ for write operation\n
+―a‖ for append operation\n
+―r+‖,‖w+‖,‖a+‖ for update operation\n\n
+83How is a file closed ?\n
+Ans: A file is closed using fclose() function\n
+Eg. fclose(fp);\n
+Where fp is a file pointer.\n\n
+84. What is a random access file?\n
+Ans:
+A file can be accessed at random using fseek() function\n
+fseek(fp,position,origin);
+fp file pointer
+position number of bytes offset from origin
+origin 0,1 or 2 denote the beginning ,current position or end of file respectively.\n\n
+85. What is the purpose of ftell ?\n
+Ans: The function ftell() is used to get the current file represented by the file pointer.
+ftell(fp);
+returns a long integer value representing the current file position of the file pointed by the
+file pointer fp.If an error occurs ,-1 is returned.\n\n
+86. What is the purpose of rewind() ?\n
+Ans: The function rewind is used to bring the file pointer to the beginning of the file.
+Rewind(fp);\n
+Where fp is a file pointer.Also we can get the same effect by
+feek(fp,0,0);\n\n
+87. Difference between a array name and a pointer variable?\n
+Ans: A pointer variable is a variable where as an array name is a fixed address and is not a
+variable. A
+pointer variable must be initialized but an array name cannot be initialized. An array name being
+a constant value , ++ and — operators cannot be applied to it.\n\n
+88. Represent a two-dimensional array using pointer?\n
+Ans:
+Address of a[I][j] Value of a[I][j]\n
+&amp;a[I][j]\n
+or\n
+a[I] + j\n
+or\n
+*(a+I) + j\n
+*&amp;a[I][j] or a[I][j]\n
+or\n
+*(a[I] + j )\n
+or\n
+*( * ( a+I) +j )\n\n
+89. Difference between an array of pointers and a pointer to an array?\n
+Ans:
+Array of pointers\n
+1- Declaration is: data_type *array_name[size];\n
+2-Size represents the row size.\n
+3- The space for columns may be dynamically\n\n
+Pointers to an array\n
+1-Declaration is data_type ( *array_name)[size];\n
+2-Size represents the column size.\n\n
+90. Can we use any name in place of argv and argc as command line arguments ?\n
+Ans: yes we can use any user defined name in place of argc and argv;\n\n
+91. What are the pointer declarations used in C?\n
+Ans:
+1- Array of pointers, e.g , int *a[10]; Array of pointers to integer\n
+2-Pointers to an array,e.g , int (*a)[10]; Pointer to an array of into\n
+3-Function returning a pointer,e.g, float *f( ) ; Function returning a pointer to float\n
+4-Pointer to a pointer ,e.g, int **x; Pointer to apointer to int\n
+5-pointer to a data type ,e.g, char *p; pointer to char\n\n
+92. Differentiate between a constant pointer and pointer to a constant?\n
+Ans:
+const char *p; //pointer to a const character.\n
+char const *p; //pointer to a const character.\n
+char * const p; //const pointer to a char variable.\n
+const char * const p; // const pointer to a const character.\n\n
+93. Is the allocated space within a function automatically deallocated when the function
+returns?\n
+Ans: No pointer is different from what it points to .Local variables including local pointers
+variables in a function are deallocated automatically when function returns.,But in case of a
+local pointer variable ,deallocation means that the pointer is deallocated and not the block of
+memory allocated to it. Memory dynamically allocated always persists until the allocation is
+freed
+or the program terminates.\n\n
+94. Discuss on pointer arithmetic?\n
+Ans:
+1- Assignment of pointers to the same type of pointers.\n
+2- Adding or subtracting a pointer and an integer.\n
+3-subtracting or comparing two pointer.\n
+4-incrementing or decrementing the pointers pointing to the elements of an array. When a pointer\n
+to an integer is incremented by one , the address is incremented by two. It is done automatically
+by the compiler.\n
+5-Assigning the value 0 to the pointer variable and comparing 0 with the pointer. The pointer
+having address 0 points to nowhere at all.\n\n
+95. What is the invalid pointer arithmetic?\n
+Ans:
+i) adding ,multiplying and dividing two pointers.\n
+ii) Shifting or masking pointer.\n
+iii) Addition of float or double to pointer.\n
+iv) Assignment of a pointer of one type to a pointer of another type ?\n\n
+96. What are the advantages of using array of pointers to string instead of an array of
+strings?\n
+Ans:
+i) Efficient use of memory.\n
+ii) Easier to exchange the strings by moving their pointers while sorting.\n\n
+97. Are the expressions *ptr ++ and ++ *ptr same?\n
+Ans: No,*ptr ++ increments pointer and not the value pointed by it. Whereas ++ *ptr
+increments the value being pointed to by ptr.\n\n
+98. What would be the equivalent pointer expression foe referring the same element as
+a[p][q][r][s] ?\n
+Ans : *( * ( * ( * (a+p) + q ) + r ) + s)\n\n
+99. Are the variables argc and argv are always local to main?\n
+Ans: Yes they are local to main.\n\n
+100. Can main () be called recursively?\n
+Ans: Yes any function including main () can be called recursively.\n\n
+101. IMP>Can we initialize unions?\n
+Ans: ANSI Standard C allows an initializer for the first member of a union. There is no standard
+way
+of initializing any other member (nor, under a pre-ANSI compiler, is there generally any way of
+initializing a union at all).\n\n
+    </string>
+    <string name="second"> </string>
+    <string name="jh">TODO</string>
+    <string name="textview"> </string>
+    <string name="c">TODO</string>
+    <string name="basics_of_C">\n\n\n
+        C is a procedural programming language initially developed by Dennis Ritchie in the year
+        1972 at Bell Laboratories of AT&amp;T Labs. It was mainly developed as a system programming
+        language to write the UNIX operating system.\n\nThe main features of the C language include:\n\n
+
+-General Purpose and Portable\n
+-Low-level Memory Access\n
+-Fast Speed\n
+-Clean Syntax\n\n
+        These features make the C language suitable for system programming like an operating system
+        or compiler development.\n\n\n
+        Why Should We Learn C?\n\n
+Many later languages have borrowed syntax/features directly or indirectly from the C language. Like
+        syntax of Java, PHP, JavaScript, and many other languages are mainly based on the C language.
+        C++ is nearly a superset of C language (Only a few programs may compile in C, but not in C++).
+        \nSo,  if a person learns C programming first, it will help him to learn any modern
+        programming
+        language as well. As learning C help to understand a lot of the underlying architecture of
+        the operating system. Like pointers, working with memory locations, etc.\n\nBeginning with C programming:\n\n
+  Writing the First Program in C\n\n
+The following code is one of the simplest C programs that will help us the basic syntax structure of a C program.\n\n
+
+Example:\n\n
+
+</string>
+    <string name="snippet">TODO</string>
+    <string name="code">\n\n\nOutput\n
+10\n
+Let us analyze the structure of our program line by line.\n\n
+    Structure of the C program\n\n
+After the above discussion, we can formally assess the structure of a C program. By structure,
+        it is meant that any program can be written in this structure only. Writing a C program in
+        any other structure will hence lead to a Compilation Error.\n\n\n The structure of a C program is
+        as follows:\n\n\n\n
+    </string>
+    <string name="structure">\n\n\n\nComponents of a C Program:\n\n\n
+1. Header Files Inclusion – Line 1 [#include]\n\n
+The first and foremost component is the inclusion of the Header files in a C program. A header file
+        is a file with extension .h which contains C function declarations and macro definitions to
+        be shared between several source files. All lines that start with # are processed by a
+        preprocessor which is a program invoked by the compiler. In the above example, the
+        preprocessor copies the preprocessed code of stdio.h to our file. The .h files are
+        called header files in C.\n\n
+Some of the C Header files:\n\n
+
+• stddef.h – Defines several useful types and macros.\n\n
+• stdint.h – Defines exact width integer types.\n\n
+• stdio.h – Defines core input and output functions\n\n
+• stdlib.h – Defines numeric conversion functions, pseudo-random number generator, and memory allocation\n\n
+• string.h – Defines string handling functions\n\n
+• math.h – Defines common mathematical functions.\n\n\n
+ 2. Main Method Declaration – Line 2 [int main()]\n\n
+The next part of a C program is to declare the main() function. It is the entry point of a C program
+        and the execution typically begins with the first line of the main(). The empty brackets
+        indicate that the main doesn’t take any parameter. The int that
+        was written before the main indicates the return type of main(). The value returned by the
+        main indicates the status of program termination\n\n\n
+        3. Body of Main Method – Line 3 to Line 6 [enclosed in {}]\n\n
+The body of a function in the C program refers to statements that are a part of that function.
+        It can be anything like manipulations, searching, sorting, printing, etc. A pair of curly
+        brackets define the body of a function. All functions must start and end with curly brackets.\n\n\n
+4. Statement – Line 4 [printf(“Hello World”);]\n\n
+Statements are the instructions given to the compiler. In C, a statement is always terminated by a
+        semicolon (;). In this particular case, we use printf() function to instruct the compiler to
+        display “Hello World” text on the screen.\n\n\n
+ 5. Return Statement – Line 5 [return 0;]\n\n
+The last part of any C function is the return statement. The return statement refers to the return
+        values from a function. This return statement and return value depend upon the return type
+        of the function. The return statement in our program returns the value from main().
+        The returned value may be used by an operating system to know the termination status of your
+        program. The value 0 typically means successful termination.   \n\n\n
+       - Application of C \n\n
+• Operating systems:\n C is widely used for developing operating systems such as Unix, Linux, and Windows.\n\n
+        • Embedded systems:\n C is a popular language for developing embedded systems such as microcontrollers, microprocessors, and other electronic devices.\n\n
+• System software: \nC is used for developing system software such as device drivers, compilers, and assemblers.\n\n
+• Networking:\n C is widely used for developing networking applications such as web servers, network protocols, and network drivers.\n\n
+• Database systems:\n C is used for developing database systems such as Oracle, MySQL, and PostgreSQL.\n\n
+• Gaming: \nC is often used for developing computer games due to its ability to handle low-level hardware interactions.\n\n
+• Artificial Intelligence:\n C is used for  developing artificial intelligence and machine learning applications such as neural networks and deep learning algorithms.\n\n
+• Scientific applications:\n C is used for developing scientific applications such as simulation software and numerical analysis tools.\n\n
+• Financial applications:\n C is used for developing financial applications such as stock market analysis and trading systems.\n\n
+
+
+    </string>
+    <string name="cpics">TODO</string>
+    <string name="Variable">
+        \n\n\n
+      \t\t \t\t\t\t\t\t\t\t\tAll about Variables\n\n
+        A variable in C language is the name associated with some memory location to store data of
+        different types. There are many types of variables in C depending on the scope, storage class,
+        lifetime, type of data they store, etc. A variable is the basic building block of a C program
+        that can be used in expressions as a substitute in place of the value it stores.\n\n
+       \t\t \t\t\t\t\t\t\t\t\tWhat is a variable in C?\n\n
+A variable in C is a memory location with some name that helps store some form of data and retrieves
+        it when required. We can store different types of data in the variable and reuse the same variable for storing some other data any number of times.\n
+        They can be viewed as the names given to the memory location so that we can refer to it without having to memorize the memory address. The size of the variable depends upon the data type it stores.\n\n
+\t\t \t\t\t\t\t\t\t\t\tC Variable Syntax\n\nThe syntax to declare a variable in C specifies the name and the type of the variable.
+    </string>
+    <string name="newtext">Here,\n
+
+• data_type: Type of data that a variable can store.\n\n
+• variable_name: Name of the variable given by the user.\n\n
+• value: value assigned to the variable by the user.\n\n
+
+   \t\t \t\t\t\t\t\t\t\t\t     Example\n\n
+
+• int var;    // integer variable\n
+• char a;     // character variable\n
+• float fff;  // float variables\n\n
+
+* Note: C is a strongly typed language so all the variables types must be specified before using them.
+
+    </string>
+    <string name="Aspect">There are 3 aspects of defining a variable:\n\n
+
+1.Variable Declaration\n
+2.Variable Definition\n
+3.Variable Initialization\n\n
+
+      \t\t \t\t\t\t\t\t\t\t\t  1. C Variable Declaration\n\n
+Variable declaration in C tells the compiler about the existence of the variable with the given
+        name and data type.When the variable is declared compiler automatically allocates the memory
+        for it.\n\n
+       \t\t \t\t\t\t\t\t\t\t\t 2. C Variable Definition\n\n
+In the definition of a C variable, the compiler allocates some memory and some value to it. A defined variable will contain some random garbage
+        value till it is not initialized.\n\n
+
+Example\n
+
+int var;\n
+char var2;\n\n
+
+*Note: Most of the modern C compilers declare and define the variable in single step. Although we can declare a variable in C by using extern keyword,
+        it is not required in most of the cases.\n\n
+     \t\t \t\t\t\t\t\t\t\t\t   3. C Variable Initialization\n\n
+Initialization of a variable is the process where the user assigns some meaningful value to the variable.\n
+
+Example:\n\n
+
+int var; // variable definition\n
+var = 10; // initialization\n
+      or\n
+int var = 10; // variable declaration and definition\n\n
+        \t\t \t\t\t\t\t\t\t\t\t How to use variables in C?\n\n
+The below example demonstrates how the use variables in C language.
+
+
+    </string>
+    <string name="output">\t\t \t\t\t\t\t\t\t\t\tOutput\n\n
+Defined_var: 0\n
+Value of defined_var after initialization: 12\n
+Value of ini_var: 25\n\n
+
+        *  Rules for Naming Variables in C\n\n
+You can assign any name to the variable as long as it follows the following rules:\n\n
+
+1. A variable name must only contain alphabets, digits, and underscore.\n\n
+2. A variable name must start with an alphabet or an underscore only. It cannot start with a digit.\n\n
+3. No whitespace is allowed within the variable name.\n\n
+4. A variable name must not be any reserved word or keyword.\n\n
+    </string>
+    <string name="Types">   \t\t \t\t\t\t\t\t\t\t\t  C Variable Types\n\n
+The C variables can be classified into the following types:\n\n
+
+1. Local Variables\n
+2. Global Variables\n
+3. Static Variables\n
+4. Automatic Variable\n
+5. Extern Variables\n
+6. Register Variables\n\n
+
+   \t\t \t\t\t\t\t\t\t\t\t 1. Local Variables in C\n\n
+A Local variable in C is a variable that is declared inside a function or a block of code. Its scope is limited to the block or function in which it is declared.\n\n
+
+Example of Local Variable in C
+
+    </string>
+    <string name="global">Output\n\n
+10\n
+
+In the above code, x can be used only in the scope of function(). Using it in the main function will give an error.\n\n
+      \t\t \t\t\t\t\t\t\t\t\t  2. Global Variables in C\n\n
+A Global variable in C is a variable that is declared outside the function or a block of code. Its scope is the whole program i.e. we can access
+        the global variable anywhere in the C program after it is declared.\n\n
+
+Example of Global Variable in C\n
+
+
+
+
+    </string>
+    <string name="Staticvar">Output\n\n
+Function 1: 20\n
+Function 2: 20\n
+
+In the above code, both functions can use the global variable as global variables are accessible by all the functions.\n\n
+
+* Note: When we have same name for local and global variable, local variable will be given preference over the global variable by the compiler.\n\n
+\t\t \t\t\t\t\t\t\t\t\t 3. Static Variables in C\n\n
+A static variable in C is a variable that is defined using the static keyword. It can be defined only once in a C program and its scope depends upon the
+        region where it is declared (can be global or local).\n\n
+
+The default value of static variables is zero.\n\n
+
+Syntax of Static Variable in C\n\n
+static data_type variable_name = initial_value;\n\n
+
+As its lifetime is till the end of the program, it can retain its value for multiple function calls as shown in the example.\n\n
+
+Example of Static Variable in C
+
+    </string>
+    <string name="automaticvar">Output\n\n
+First Call\n
+    Local: 30\n
+    Static: 40\n\n
+Second Call\n
+    Local: 30\n
+    Static: 50\n\n
+Third Call\n
+    Local: 30\n
+    Static: 60\n\n
+
+In the above example, we can see that the local variable will always print the same value whenever the function will be called whereas the
+        static variable will print the incremented value in each function call.\n\n
+
+* Note: Storage Classes in C is the concept that helps us to determine the scope, lifetime, memory location, and default value (initial value) of a variable.\n\n
+\t\t \t\t\t\t\t\t\t\t\t 4. Automatic Variable in C\n\n
+All the local variables are automatic variables by default. They are also known as auto variables.\n\n
+
+Their scope is local and their lifetime is till the end of the block. If we need, we can use the auto keyword to define the auto variables.\n\n
+
+The default value of the auto variables is a garbage value.\n\n
+
+Syntax of Auto Variable in C\n\n
+auto data_type variable_name;\n
+        or\n
+data_type variable_name;    (in local scope)\n\n
+
+Example of auto Variable in C\n
+
+
+    </string>
+    <string name="Exter">Output\n\n
+Auto Variable: 20\n\n
+
+In the above example, both x and y are automatic variables. The only difference is that variable y is explicitly declared with the auto keyword.\n\n
+\t\t \t\t\t\t\t\t\t\t\t 5. External Variables in C\n\n
+External variables in C can be shared between multiple C files. We can declare an external variable using the extern keyword.\n\n
+
+Their scope is global and they exist between multiple C files.\n\n
+
+Syntax of Extern Variables in C\n
+extern data_type variable_name;\n\n
+
+Example of Extern Variable in C\n\n
+
+
+
+
+    </string>
+    <string name="con">In the above example, x is an external variable that is used in multiple C files.\n\n
+
+\t\t\t\t\t\t\t\t\t\t\t6. Register Variables in C\n\n
+Register variables in C are those variables that are stored in the CPU register instead of the conventional storage place like RAM. Their scope is local and exists
+        till the end of the block or a function.\n\n
+
+These variables are declared using the register keyword.\n\n
+
+The default value of register variables is a garbage value.\n\n
+
+Syntax of Register Variables in C\n
+register data_type variable_name = initial_value;\n\n
+
+Example of Register Variables in C
+
+</string>
+    <string name="cvar">Output\n\n
+Value of Register Variable: 22\n\n
+
+* NOTE: We cannot get the address of the register variable using addressof (&amp;) operator because they are stored in the CPU register. The compiler will
+        throw an error if we try to get the address of register variable.\n\n
+
+\t\t\t\t\t\t\t\t\t\t\tConstant Variable in C\n\n
+Till now we have only seen the variables whose values can be modified any number of times. But C language also provides us a way to make the value of a variable
+        immutable. We can do that by defining the variable as constant.\n\n
+
+A constant variable in C is a read-only variable whose value cannot be modified once it is defined. We can declare a constant variable using the const keyword.\n\n
+
+Syntax of Const Variable in C\n
+const data_type variable_name = value;\n\n
+
+* Note: We have to always initialize the const variable at the definition as we cannot modify its value after defining.\n\n
+
+Example of Const Variable in C
+
+    </string>
+    <string name="data">\n\n\n\n\t\t\t\t\t\t\t\t\t\t\tData Types in C\n\n
+Each variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc. Each data type requires different amounts of memory and has some specific operations which can be performed over it. The data type is a collection of data with values having fixed values, meaning as well as its characteristics.
+
+The data types in C can be classified as follows:
+</string>
+
+    <string name="integee">The following are some main primitive data types in C:\n\n
+
+\t\t\t\t\t\t\t\t\t\t\tInteger Data Type\n\n
+The integer datatype in C is used to store the integer numbers(any number including positive, negative and zero without decimal part). Octal values,
+        hexadecimal values, and decimal values can be stored in int data type in C.\n\n
+
+Range:  -2,147,483,648 to 2,147,483,647\n
+Size: 4 bytes\n
+Format Specifier: %d\n\n
+Syntax of Integer\n
+We use int keyword to declare the integer variable:\n
+
+int var_name;\n\n
+
+The integer data type can also be used as\n\n
+
+1. unsigned int: Unsigned int data type in C is used to store the data values from zero to positive numbers but it can’t store negative values like signed int.\n\n
+2. short int: It is lesser in size than the int by 2 bytes so can only store values from -32,768 to 32,767.\n\n
+3. long int: Larger version of the int datatype so can store values greater than int.\n\n
+4. unsigned short int: Similar in relationship with short int as unsigned int with int.\n\n
+* Note: The size of an integer data type is compiler-dependent. We can use sizeof operator to check the actual size of any data type.\n\n
+\t\t\t\t\t\t\t\t\t\t\tCharacter Data Type\n\n
+
+Character data type allows its variable to store only a single character. The size of the character is 1 byte. It is the most basic data type in C.
+        It stores a single character and requires a single byte of memory in almost all compilers.\n\n
+
+Range: (-128 to 127) or (0 to 255)\n
+Size: 1 byte\n
+Format Specifier: %c\n\n
+Syntax of char\n
+The char keyword is used to declare the variable of character type: char var_name;
+
+    \t\t\t\t\t\t\t\t\t\t\t    Float Data Type\n\n
+In C programming float data type is used to store floating-point values. Float in C is used to store decimal and exponential values.
+        It is used to store decimal numbers (numbers with floating point values) with single precision.\n\n
+
+Range: 1.2E-38 to 3.4E+38\n
+Size: 4 bytes\n
+Format Specifier: %f\n\n
+Syntax of float\n
+The float keyword is used to declare the variable as a floating point: float var_name;\n\n
+       \t\t\t\t\t\t\t\t\t\t\t  Double Data Type\n\n
+A Double data type in C is used to store decimal numbers (numbers with floating point values) with double precision. It is used to define numeric
+        values which hold numbers with decimal values in C.\n\n
+
+The double data type is basically a precision sort of data type that is capable of holding 64 bits of decimal numbers or floating points.
+        Since double has more precision as compared to that float then it is much more obvious that it occupies twice the memory occupied by
+        the floating-point type. It can easily accommodate about 16 to 17 digits after or before a decimal point.\n\n
+
+Range: 1.7E-308 to 1.7E+308\n
+Size: 8 bytes\n
+Format Specifier: %lf\n\n
+Syntax of Double\n
+The variable can be declared as double precision floating point using the double keyword: double var_name;\n\n
+\t\t\t\t\t\t\t\t\t\t\t Void Data Type\n\n
+The void data type in C is used to specify that no value is present. It does not provide a result value to its caller. It has no values and no operations.
+        It is used to represent nothing. Void is used in multiple ways as function return type, function arguments as void, and pointers to void.\n\n
+
+Syntax:\n\n
+// function return type void\n
+void exit(int check);\n
+// Function without any parameter can accept void.\n
+int print(void);\n
+// memory allocation function which\n
+// returns a pointer to void.\n
+void *malloc (size_t size);\n\n
+   \t\t\t\t\t\t\t\t\t\t\t     Size of Data Types in C\n\n
+The size of the data types in C is dependent on the size of the architecture, so we cannot define the universal size of the data types. For that,
+        the C language provides the sizeof() operator to check the size of the data types.\n\n
+    </string>
+    <string name="operatord">   \t\t\t\t\t\t\t\t\t\t\t Operators in C\n\n
+
+
+
+    </string>
+
+</resources>

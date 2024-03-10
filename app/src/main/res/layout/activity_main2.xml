@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="23dp"
+    tools:context=".MainActivity2"
+    android:background="@drawable/r"
+    >
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="399dp"
+        android:layout_height="721dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/b1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Fourth"
+                android:text="Basics of C language"
+                android:textStyle="normal|bold|italic" />
+
+            <Button
+                android:id="@+id/b2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Fifth"
+                android:text="Variables"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Six"
+                android:text="Data type's"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Operator"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conversion"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Different type of statement"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loops"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pattern"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arrays"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Input and output statement in c"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Character "
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="String functions"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Functions"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recursion"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pointer"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Structure"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Union"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Memory allocation"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Files in c"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="File pointer"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Third"
+                android:text="Question bank"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Practise set"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/b23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/b24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/b25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/b26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/b27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/b28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
